@@ -1,0 +1,42 @@
+<div class="gainsboro">
+  <h1>Place Order</h1>
+  <div class="row justify-content-center">
+    <div style="width: 800px; background-color: white">
+      <form [formGroup]="registrationForm">
+
+        <div class="card-body">
+
+          <div class="form-group">
+            <label for="items">Stock</label>
+            <select placeholder="Items" required formControlName="items" id="items">
+              <option>--Select one--</option>
+              <option *ngFor="let item of items" [value]="item.id">
+                {{item.name}}
+              </option>
+            </select>
+          </div>
+          &nbsp;
+          <button class="btn btn-success" type="submit" (click)="onSubmit()">Order</button>
+          <br/>
+          &nbsp;
+          <h1>Order Information</h1>
+          <ul>
+            <li><b>Account:</b> {{orders2?.id}}</li>
+            <li><b>Account:</b> {{orders2?.invoice.account}}</li>
+            <li><b>Payment Date:</b> {{orders2?.date | date}}</li>
+            <li><b>Customer Name:</b> {{orders2?.fullName}}</li>
+            <li><b>Contact Number:</b> {{orders2?.contactNumber}}</li>
+            <li><b>Invoice Date:</b> {{orders2?.invoice.date | date}}</li>
+            <li><b>Invoice Id:</b> {{orders2?.invoice.id}}</li>
+            <li><b>Order Number:</b> {{orders2?.id}}</li>
+            <li><b>Customer Id:</b> {{orders2?.userId}}</li>
+          </ul>
+
+        </div>
+      </form>
+    </div>
+    <footer class="footer">
+      <span class="row justify-content-center">All Rights Reserved 2023 @FNB</span>
+    </footer>
+  </div>
+</div>

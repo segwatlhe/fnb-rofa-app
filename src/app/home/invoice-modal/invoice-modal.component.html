@@ -1,0 +1,30 @@
+<div class="gainsboro">
+  <h1>View Invoice</h1>
+  <div class="row justify-content-center">
+    <div style="width: 800px; background-color: white">
+      <form [formGroup]="registrationForm">
+
+        <div class="card-body">
+          <div class="card-body">
+            <h1>Invoice Details</h1>
+            <ul>
+              <li><b>Account:</b> {{this.registrationForm.get('account')?.value}}</li>
+              <li><b>Customer Name:</b> {{this.registrationForm.get('fullName')?.value}}</li>
+              <li><b>Customer Email:</b> {{this.registrationForm.get('email')?.value}}</li>
+              <li><b>Contact Number:</b> {{this.registrationForm.get('contactNumber')?.value}}</li>
+              <li><b>Invoice Date:</b> {{this.registrationForm.get('invoiceDate')?.value | date}}</li>
+              <li><b>Invoice Id:</b> {{this.registrationForm.get('invoiceId')?.value}}</li>
+              <li><b>Order Number:</b> {{this.registrationForm.get('orderId')?.value}}</li>
+              <li><b>Customer Id:</b> {{this.registrationForm.get('userId')?.value}}</li>
+            </ul>
+          </div>
+          &nbsp;
+          <button class="btn btn-success" type="submit" (click)="download()">Download</button>
+        </div>
+      </form>
+    </div>
+    <footer class="footer">
+      <span class="row justify-content-center">All Rights Reserved 2023 @FNB</span>
+    </footer>
+  </div>
+</div>

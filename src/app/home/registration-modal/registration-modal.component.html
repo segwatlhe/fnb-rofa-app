@@ -1,0 +1,49 @@
+<div class="gainsboro">
+  <h1>Register Person</h1>
+  <div class="row justify-content-center">
+    <div style="width: 400px; background-color: white">
+      <form [formGroup]="registrationForm">
+
+        <div class="card-body">
+
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input autocomplete="off" class="form-control" id="fullName" name="fullName"
+                   required formControlName="fullName"
+                   type="text" placeholder="Full Name">
+          </div>
+
+          <div class="form-group">
+            <label for="idNumber">ID Number</label>
+            <input autocomplete="off" class="form-control" id="idNumber" name="idNumber"
+                   required formControlName="idNumber"
+                   data-toggle="tooltip" data-placement="top" title="Enter a valid South African ID Number"
+                   type="number" placeholder="ID Number">
+          </div>
+
+          <div class="form-group">
+            <label for="contactNumber">Contact Number</label>
+            <input autocomplete="off" class="form-control" id="contactNumber"
+                   name="contactNumber" formControlName="contactNumber"
+                   required type="text" placeholder="Contact Number" data-toggle="tooltip" data-placement="top"
+                   title="Enter a 10 Digit number">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Contact Number</label>
+            <input autocomplete="off" class="form-control" id="email"
+                   name="email" formControlName="email"
+                   required type="text" placeholder="Email" data-toggle="tooltip" data-placement="top"
+                   title="Enter email">
+          </div>
+
+          <button class="btn btn-success" type="submit" (click)="onSubmit()">Submit</button>
+
+        </div>
+      </form>
+    </div>
+    <footer class="footer">
+      <span class="row justify-content-center">All Rights Reserved 2023 @FNB</span>
+    </footer>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="gainsboro">
+  <h1>Place Order</h1>
+  <div class="row justify-content-center">
+    <div style="width: 800px; background-color: white">
+      <form [formGroup]="registrationForm">
+
+        <div class="card-body">
+
+          <div class="form-group">
+            <label for="paymentMethods">Payment Method</label>
+            <select placeholder="Payment Method" required formControlName="paymentMethods" id="paymentMethods">
+              <option>--Select one--</option>
+              <option *ngFor="let paymentMethod of paymentMethods" [value]="paymentMethod.name">
+                {{paymentMethod.name}}
+              </option>
+            </select>
+          </div>
+
+          <button class="btn btn-success" type="submit" (click)="onSubmit()">Pay</button>
+
+        </div>
+      </form>
+      <br/>
+      <h1>Payment Information</h1>
+      <ul>
+        <li><b>Account:</b> {{payment?.account}}</li>
+        <li><b>Payment Date:</b> {{payment?.date | date}}</li>
+        <li><b>Customer Name:</b> {{payment?.fullName}}</li>
+        <li><b>Contact Number:</b> {{payment?.contactNumber}}</li>
+        <li><b>Invoice Date:</b> {{payment?.invoiceDate | date}}</li>
+        <li><b>Invoice Id:</b> {{payment?.invoiceId}}</li>
+        <li><b>Order Number:</b> {{payment?.orderId}}</li>
+        <li><b>Customer Id:</b> {{payment?.userId}}</li>
+        <li><b>Payment Method:</b> {{payment?.paymentMethods}}</li>
+      </ul>
+    </div>
+    <footer class="footer">
+      <span class="row justify-content-center">All Rights Reserved 2023 @FNB</span>
+    </footer>
+  </div>
+</div>
