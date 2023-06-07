@@ -8,7 +8,7 @@ import {User} from "../model/user";
 })
 export class RegistrationService {
 
-  private baseUrl = 'http://localhost:6050/api/fnb';
+  private baseUrl = 'http://localhost:8080/api/fnb';
 
   constructor(private http: HttpClient) {
   }
